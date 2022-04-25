@@ -1,0 +1,38 @@
+<router-outlet></router-outlet>
+
+<div>
+    <div>
+        <form [formGroup]="FormTask" (ngSubmit)="createNewTask()">
+            <label>Titulo</label> <br>
+            <input type="text" formControlName="title"> <br>
+            
+            <label>Descripción</label><br>
+            <input type="text" formControlName="description"><br>
+
+            <button type="submit">Crear</button>
+        </form>
+    </div>
+
+    <div class="tasks">
+        <div class="task" *ngFor="let task of ListOfTasks">
+            <h3>{{ task.title }}</h3>
+            <p>{{ task.description }}</p>
+
+            <button (click)="deleteTask(task.id)" class="boton">Borrar</button>
+            <button (click)="editTask(task.id, task.title, task.description)" class="boton">Editar</button>    
+        </div>
+    </div>
+
+    <div *ngIf="status">
+        <form [formGroup]="FormTaskEdit" (ngSubmit)="UpdateTask()">
+            <label>Titulo</label> <br>
+            <input type="text" formControlName="title" value="{{updatedTask.title}}"> <br>
+            
+            <label>Descripción</label><br>
+            <input type="text" formControlName="description" value="{{updatedTask.description}}"><br>
+
+            <button type="submit">Crear</button>
+        </form>
+    </div>
+</div>
+

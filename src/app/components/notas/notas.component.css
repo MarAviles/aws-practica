@@ -1,0 +1,25 @@
+.tasks {
+    background-color: bisque;
+    padding: 1em;
+    overflow: hidden;
+}
+
+.task {
+    margin: 2em;
+    padding: 2em;
+    width: 13em;
+    height: 10em;
+    background-color: white;
+    border-radius: 15px;
+    float: left;
+}
+
+.boton {
+    border: 0px;
+    padding: 0.8em;
+    margin-top: 15px;
+    margin-right: 1em;
+    border-radius: 5px;
+    float: right;
+    cursor: pointer;
+}
